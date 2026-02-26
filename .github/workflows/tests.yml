@@ -1,0 +1,37 @@
+name: Python Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest
+    
+    - name: Test imports
+      run: |
+        python -c "import pyautogui; import mss; from PIL import Image; print('Dependencies OK')"
+    
+    - name: Test desktop module load
+      run: |
+        python -c "from desktop import DesktopController; print('DesktopController loaded')"
+    
+    - name: Test screen size
+      run: |
+        python -c "from desktop import DesktopController; c = DesktopController(); print(c.get_screen_size())"
