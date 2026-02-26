@@ -1,0 +1,145 @@
+name: desktop-control
+description: Windows desktop automation - control mouse, keyboard, and screen captures
+emoji: 🖥️
+version: 1.0.0
+author: OpenClaw
+platform: windows
+
+requires:
+  python: ">=3.8"
+  os: windows
+  bins:
+    - python
+  packages:
+    pip:
+      - pyautogui>=0.9.54
+      - mss>=9.0.1
+      - pillow>=10.0.0
+      - opencv-python>=4.8.0
+      - numpy>=1.24.0
+
+commands:
+  screenshot:
+    description: Capture screen or region
+    args:
+      - name: x
+        type: int
+        default: 0
+        description: X coordinate
+      - name: y
+        type: int
+        default: 0
+        description: Y coordinate
+      - name: w
+        type: int
+        default: 1920
+        description: Width
+      - name: h
+        type: int
+        default: 1080
+        description: Height
+      - name: full
+        type: bool
+        default: false
+        description: Capture full screen
+      - name: output
+        type: string
+        description: Output file path
+    
+  click:
+    description: Click at coordinates
+    args:
+      - name: x
+        type: int
+        required: true
+        description: X coordinate
+      - name: y
+        type: int
+        required: true
+        description: Y coordinate
+      - name: button
+        type: string
+        default: left
+        enum: [left, right, middle]
+      - name: clicks
+        type: int
+        default: 1
+    
+  type:
+    description: Type text
+    args:
+      - name: text
+        type: string
+        required: true
+      - name: interval
+        type: float
+        default: 0.01
+        description: Delay between keystrokes
+    
+  keypress:
+    description: Press key or hotkey
+    args:
+      - name: key
+        type: string
+        description: Single key name
+      - name: hotkey
+        type: string
+        description: Hotkey combination (comma-separated)
+    
+  scroll:
+    description: Scroll mouse wheel
+    args:
+      - name: clicks
+        type: int
+        required: true
+        description: Scroll amount (negative=down)
+      - name: x
+        type: int
+        description: X position
+      - name: y
+        type: int
+        description: Y position
+    
+  move:
+    description: Move mouse cursor
+    args:
+      - name: x
+        type: int
+        required: true
+      - name: y
+        type: int
+        required: true
+      - name: duration
+        type: float
+        default: 0.5
+        description: Movement duration
+    
+  locate:
+    description: Find image on screen
+    args:
+      - name: image
+        type: string
+        required: true
+        description: Path to image file
+      - name: confidence
+        type: float
+        default: 0.9
+        description: Match confidence
+    
+  click_image:
+    description: Find and click image
+    args:
+      - name: image
+        type: string
+        required: true
+      - name: confidence
+        type: float
+        default: 0.9
+    
+  screen_size:
+    description: Get screen dimensions
+    args: []
+    
+  mouse_pos:
+    description: Get current mouse position
+    args: []
