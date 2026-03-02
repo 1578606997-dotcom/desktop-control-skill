@@ -5,6 +5,11 @@ Windows Desktop Automation via AI | Windows 桌面 AI 自动化控制
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-blue.svg)](https://www.microsoft.com/windows)
 [![Python: 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Stars](https://img.shields.io/github/stars/1578606997-dotcom/desktop-control-skill)](https://github.com/1578606997-dotcom/desktop-control-skill/stargazers)
+
+> 🎉 **我们刚刚发布了浏览器插件版本！** 现在可以在 Chrome 中直接控制浏览器了。
+> 
+> 💬 **[加入讨论](https://github.com/1578606997-dotcom/desktop-control-skill/discussions)** - 分享你的使用场景，最佳分享者将获得 Contributor 身份！
 
 ---
 
