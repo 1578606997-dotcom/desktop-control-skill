@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Control</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 350px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #fff;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #333;
+    }
+    
+    .icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .subtitle {
+      font-size: 12px;
+      color: #888;
+    }
+    
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      background: #16213e;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+    }
+    
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    
+    .btn {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #0f3460;
+      color: #fff;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .btn:hover {
+      background: #e94560;
+    }
+    
+    .btn-primary {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .config {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #333;
+    }
+    
+    .input-group {
+      margin-bottom: 10px;
+    }
+    
+    .input-group label {
+      display: block;
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    
+    .input-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background: #16213e;
+      color: #fff;
+      font-size: 12px;
+    }
+    
+    .result {
+      margin-top: 12px;
+      padding: 10px;
+      background: #16213e;
+      border-radius: 6px;
+      font-size: 12px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    
+    .result-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #4ade80;
+    }
+    
+    .footer {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+    }
+    
+    .footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="icon">🖱️</div>
+    <div>
+      <div class="title">Desktop Control</div>
+      <div class="subtitle">浏览器自动化</div>
+    </div>
+  </div>
+  
+  <div class="status">
+    <div class="status-dot" id="statusDot"></div>
+    <span id="statusText">就绪</span>
+  </div>
+  
+  <div class="actions">
+    <button class="btn btn-primary" id="btnScreenshot">📸 截图当前页面</button>
+    <button class="btn" id="btnClick">🖱️ 点击元素</button>
+    <button class="btn" id="btnType">⌨️ 输入文字</button>
+    <button class="btn" id="btnScroll">📜 滚动页面</button>
+    <button class="btn" id="btnInfo">📄 页面信息</button>
+  </div>
+  
+  <div class="config">
+    <div class="input-group">
+      <label>OpenClay Gateway URL (可选)</label>
+      <input type="text" id="gatewayUrl" placeholder="ws://127.0.0.1:18789" value="">
+    </div>
+    <button class="btn" id="btnConnect" style="width: 100%;">🔗 连接 OpenClaw</button>
+  </div>
+  
+  <div class="result" id="result" style="display: none;">
+    <div class="result-title">结果</div>
+    <div id="resultContent"></div>
+  </div>
+  
+  <div class="footer">
+    <a href="https://github.com/1578606997-dotcom/desktop-control-skill" target="_blank">GitHub</a> • 
+    Built by CJ + OpenClaw
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
