@@ -25,6 +25,31 @@ Windows Desktop Automation via AI | Windows 桌面 AI 自动化控制
 
 ---
 
+## 🏆 项目定位与差异化
+
+### 与同类项目对比
+
+| 特性 | [Turix](https://github.com/TurixAI/TuriX-CUA) | [Fara-7B](https://github.com/microsoft/fara) | **Desktop Control Skill** |
+|------|---------------------------------------------|---------------------------------------------|---------------------------|
+| **组织** | TurixAI | Microsoft | 开源社区 |
+| **架构** | 多模型 CUA | 7B Agentic Model | **OpenClaw Skill + 浏览器扩展** |
+| **浏览器控制** | ❌ | ❌ | ✅ **独有** |
+| **HIL 语言** | ❌ | ❌ | ✅ **独有** |
+| **符号神经融合** | ❌ | ❌ | ✅ **研究中** |
+| **Stars** | 1,031 | 4,170 | 1 |
+| **开源** | ✅ | ✅ | ✅ |
+
+### 我们的独特价值
+
+1. **🌐 浏览器扩展 v2.0** - Turix/Fara 没有浏览器控制，我们有完整的 Chrome/Edge 扩展
+2. **🔣 HIL 语言集成** - 用结构化符号压缩指令，减少 token 消耗
+3. **🧠 SNF 框架研究** - 符号神经融合，解决长上下文失忆（独立研究项目）
+4. **🔧 OpenClaw 深度集成** - 作为 Skill 无缝融入 OpenClaw 生态
+
+**不是竞争，是差异化互补。** Turix/Fara 证明了 CUA 方向的价值，我们在浏览器扩展和符号压缩方向探索新可能。
+
+---
+
 ## 👥 作者
 
 **Original Framework | 原始框架**  
