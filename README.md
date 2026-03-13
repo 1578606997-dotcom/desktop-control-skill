@@ -234,6 +234,37 @@ openclaw skills run desktop-control keypress --hotkey ctrl,c
 1. Fork 本仓库
 2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
 3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+
+## 📁 示例代码
+
+### 基础示例
+
+查看 `examples/` 目录获取更多示例：
+
+| 文件 | 说明 |
+|------|------|
+| `browser_automation.py` | 浏览器自动化 |
+| `image_recognition.py` | 图像识别 |
+| `form_filling.py` | 表单自动填写 |
+| `batch_processing.py` | 批量文件处理 |
+| `game_automation.py` | 游戏自动化 |
+
+### 运行示例
+
+```bash
+# 进入示例目录
+cd examples
+
+# 运行表单填写示例
+python form_filling.py
+
+# 运行批量处理示例
+python batch_processing.py
+
+# 运行游戏自动化示例
+python game_automation.py
+```
+
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 创建 Pull Request
 
